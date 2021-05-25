@@ -12,7 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh "chmod +x -R ${env.WORKSPACE}"
-                sh 'npm install'
+                sh 'npm install --unsafe-perm=true --allow-root'
             }
         }
         stage('Test') {
